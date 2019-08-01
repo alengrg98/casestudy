@@ -17,11 +17,14 @@ $('#nv2').click(function(){
                 //console.log(data[j].id);            
                 for( var i in data)
                 {
-                    //console.log(data[i].id);
+                    if(data[i].completed==true)
+                    {
+                        code+='<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" id="defaultUnchecked'+data[i].id+'" checked disabled><label class="custom-control-label" for="defaultUnchecked'+data[i].id+'">'+data[i].title+'</label></div>';
+                    }
+                    else{
+                    code+='<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" id="defaultUnchecked'+data[i].id+'"><label class="custom-control-label" for="defaultUnchecked'+data[i].id+'">'+data[i].title+'</label></div>';
+                    }
                     
-                    code+='<br><div class="card"> <div class="card-body"><p>ID:'+data[i].id+'</p><p>Title:'+data[i].title+'</p>';
-                    code+='<input type="checkbox" class="ch"  id="'+data[i].id+'">  </div></div>';
-                    //j++;
                 }
                 //console.log(code);
                 
@@ -31,6 +34,12 @@ $('#nv2').click(function(){
                     if($(this).prop("checked") == true){
                         //alert("Checkbox is checked.");
                         count++;
+                    }
+                    else
+                    {
+                        count--;
+                        //console.log(count);
+                        
                     }
                     //console.log(count);
                    /* if(count==5){

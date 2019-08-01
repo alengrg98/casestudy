@@ -5,6 +5,11 @@ var prom=5;
 $('#nv2').click(function(){
     window.location.assign('todo.html');
 })
+
+
+$('#nv1').click(function(){
+    window.location.assign('main.html');
+})
    
 
         $.ajax({
